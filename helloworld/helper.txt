@@ -1,0 +1,6 @@
+bar asas in:
+https://grpc.io/docs/languages/go/quickstart/
+
+
+bayad ghabl generator run beshe
+source ~/.bashrc
