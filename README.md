@@ -1,3 +1,3 @@
 # grpc_learning
-here is were i put my grpc learning materials and codes
-fell free to use
+here is were i put my grpc learning materials and codes<br>
+feel free to use
