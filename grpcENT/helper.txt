@@ -1,0 +1,37 @@
+from: https://entgo.io/docs/grpc-intro
+
+
+commands:
+mkdir ent-grpc-example
+cd ent-grpc-example
+go mod init ent-grpc-example
+
+
+go run -mod=mod entgo.io/ent/cmd/ent new User
+
+
+add entproto to project:
+go get -u entgo.io/contrib/entproto
+
+
+in the root
+go generate ./...
+
+
+add this to generate:
+package ent
+
+//go:generate go run -mod=mod entgo.io/ent/cmd/ent generate ./schema
+//go:generate go run -mod=mod entgo.io/contrib/entproto/cmd/entproto -path ./schema
+
+
+then generate again:
+go generate ./...
+
+
+-as you already understood, i did not give the path that the tutorial gave to the client
+i did this to show that what are the things that this client needs to be able to send data
+and they are not all things that server needs
+
+
+!cation! at the last part of tutorial, they made it with a ext.proto that included the package via their github llink so it did'nt show errors. but the generaated files has cycle importing, so i made it import from current directory and fixed it.
